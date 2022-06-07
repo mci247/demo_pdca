@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="{% url 'pdca:save' %}", method="post">
+        <p>Họ tên: {{ f.name }}</p>
+        <p>Công ty: {{ f.company }}</p>
+        <p>{{ f.time_create }}</p>
+
+         {% csrf_token %}
+
+        <input type="submit", value="Thêm học viên">
+    </form>
+</body>
+</html>
