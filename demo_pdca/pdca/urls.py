@@ -8,6 +8,8 @@ urlpatterns = [
     path('save/', views.SaveStudent.as_view(), name='save'),
     path('email/', views.send_email, name='email'),
     path('process/', views.process, name='process'),
-    path('test/', views.test_func, name='testfunc'),
+    path('question/', views.view_list, name='list_question'),
+    path('detail/<int:question_id>', views.detailView, name='detail'),
+    path('<int:question_id>', views.vote, name='vote'),
 ]
 

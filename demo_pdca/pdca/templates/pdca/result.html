@@ -1,0 +1,14 @@
+{% extends 'pdca/base.html' %}
+{% block content %}
+
+    {% if q %}
+        <h1>{{ q.question_text }}</h1>
+        <p>Kết quả của khảo sát là:</p>
+        {% for item in q.choice_set.all %}
+            <p>{{ item.choice_text }} : <span style="color: red";>{{ item.vote }}</span></p>
+        {% endfor %}
+
+        <a href="{% url 'pdca:list_question' %}">Vote tiếp</a>
+    {% endif %}
+
+{% endblock %}
